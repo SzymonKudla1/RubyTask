@@ -1,0 +1,33 @@
+<h1>Trainees list</h1>
+
+  <input placeholder="Search course title" type="text" name="title" id="title">
+  <input type="submit" name="commit" value="Search">
+</form>
+<%= search_form_for @q do |f| %>
+  <%= f.label :first_name_or_last_name %>
+  <%= f.search_field :first_name_or_last_name_cont_all %>
+  <%= f.submit %>
+<% end %>
+<table>
+  <thead>
+    <tr><th>First name</th>
+    <th>Last name</th>
+    <th>Email</th>
+    <th>Birthdate</th>
+    <th>Active</th>
+    <th>Actions</th>
+  </tr></thead>
+  <tbody>
+    <% @trainees.each do |trainee| %>
+      <tr>
+        <td><%= trainee.first_name %></td>
+        <td><%= trainee.last_name %></td>
+        <td><%= trainee.email %></td>
+        <td><%= trainee.birthdate %></td>
+        <td><%= trainee.active %></td>
+        <td></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
