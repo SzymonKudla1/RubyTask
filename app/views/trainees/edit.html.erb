@@ -2,9 +2,9 @@
     <%= f.input :first_name %>
     <%= f.input :last_name %>
     <%= f.input :email %>
-    <%= f.input :age %>
-    <%= f.input :no_of_courses %>
-    <%= f.input :status %>
-    <%= f.input :action %>
+    <%= f.input :birthdate %>
+    <%= f.input :active %>
+    <%= f.association :courses %>
+
     <%= f.button :submit %>
-  <% end %>
+<% end %>

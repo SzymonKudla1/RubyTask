@@ -1,5 +1,5 @@
 <h1>Trainees list</h1>
-
+<%= link_to "Add new trainee", new_trainee_path, class:"btn btn-outline-dark"%>
   <input placeholder="Search course title" type="text" name="title" id="title">
   <input type="submit" name="commit" value="Search">
 </form>
@@ -15,6 +15,7 @@
     <th>Email</th>
     <th>Birthdate</th>
     <th>Active</th>
+    <th>Courses</th>
     <th>Actions</th>
   </tr></thead>
   <tbody>
@@ -25,7 +26,8 @@
         <td><%= trainee.email %></td>
         <td><%= trainee.birthdate %></td>
         <td><%= trainee.active %></td>
-        <td></td>
+        <td><%= trainee.course_ids.join(', ') %></td>
+        <td><%=link_to "Edit", edit_trainee_path(id: trainee.id), class:"btn btn-outline-info"%></td>
       </tr>
     <% end %>
   </tbody>
